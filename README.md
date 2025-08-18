@@ -1,69 +1,93 @@
-# React + TypeScript + Vite
+# 🧩 UI Component Assignment – InputField & DataTable
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Demo: [https://uds-assignment-a784.vercel.app](https://uds-assignment-a784.vercel.app)
 
-Currently, two official plugins are available:
+## 📝 Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is part of a front-end assignment to build two reusable and accessible UI components using **React + TypeScript + TailwindCSS**:
 
-## Expanding the ESLint configuration
+1. **InputField** – A form input component with props to handle label, placeholder, helper text, error messages, states (disabled, loading, invalid), and variants (filled, outlined, ghost).
+2. **DataTable** – A generic, type-safe table component that supports:
+   - Dynamic column rendering
+   - Serial number generation
+   - Row selection with checkbox
+   - Column sorting
+   - Empty state and loading state
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The goal was to follow best practices around component reusability, prop-based styling, type safety, and minimal UI design.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- React (Vite)
+- TypeScript
+- Tailwind CSS
+- React Icons (for sort icon)
+
+---
+
+## 🚀 Setup Instructions
+
+1. **Clone the repository**
+```
+git clone https://github.com/commitwithamit/uds-assignment.git
+cd uds-assignment
+```
+2. Install dependencies
+```
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+3. Run locally
 ```
+npm run dev
+```
+
+4. Build for production
+```
+npm run build
+```
+
+**Components Implemented**
+
+**1. InputField**
+
+**Props:**
+
+* `label`, `placeholder`, `helperText`, `errorMessage`
+* `disabled`, `invalid`, `loading`
+* `variant`: `'filled' | 'outlined' | 'ghost'`
+* `size`: `'sm' | 'md' | 'lg'`
+
+**Features:**
+
+* Spinner during loading
+* Conditional styles based on props
+* Responsive and accessible
+
+**2. DataTable**
+
+**Props:**
+
+* `data`, `columns`, `loading`, `selectable`, `onRowSelect`
+
+**Features:**
+
+* Dynamic headers and rows
+* Row selection via checkboxes
+* Sorting via clickable headers
+* Custom serial number column
+* Graceful handling of empty and loading states
+
+---
+
+**🧠 Approach**
+
+The project focused on:
+
+* Creating fully reusable and prop-driven components
+* Using TypeScript generics for type-safe data table rendering
+* Leveraging TailwindCSS utility classes for fast styling
+* Handling multiple UI states and conditions cleanly
+* Preparing the components for future extension (like Storybook integration)
