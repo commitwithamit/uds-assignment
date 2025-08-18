@@ -26,7 +26,8 @@ export default function InputField(props: InputFieldProps) {
     }
     return (
         <>
-            <div className="h-[120px]">
+            <div className="h-[120px] mb-[7rem]">
+                <h2 className="mb-5 text-4xl font-extrabold text-center leading-none tracking-tight text-gray-900 md:text-5xl mdz:text-5xl">Input Field</h2>
                 <label
                     htmlFor="password"
                     className="block mb-3 text-sm font-medium text-gray-900 pl-[2px]"

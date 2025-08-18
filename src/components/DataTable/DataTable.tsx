@@ -12,7 +12,7 @@ const DataTable = <T,>({
 }: DataTableProps<T>) => {
 
     const renderCell = (col: Column<T>, row: T, index: number) => {
-        if (col.dataIndex === 'serial') return index + 1;
+        if (col.key === 'serial') return index + 1;
         return String(row[col.dataIndex]);
     };
 
@@ -68,6 +68,7 @@ const DataTable = <T,>({
 
     return (
         <div className="flex flex-col w-[90%]">
+            <h1 className="mb-5 text-4xl font-extrabold text-center leading-none tracking-tight text-gray-900 md:text-5xl mdz:text-5xl">Data Table</h1>
             <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                     <div className="overflow-hidden">
