@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url(../public/currencybg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
